@@ -1,0 +1,16 @@
+{
+    "courseList": [
+        {
+            "value": "v2",
+            "viewValue": "Angular 2"
+        },
+        {
+            "value": "v4",
+            "viewValue": "Angular 4"
+        },
+        {
+            "value": "v18",
+            "viewValue": "Angular 18"
+        }
+    ]
+}

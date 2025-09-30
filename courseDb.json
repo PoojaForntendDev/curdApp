@@ -1,0 +1,13 @@
+{
+  "courses": [
+    {
+      "id": "dd3d",
+      "courseName": "poooja ",
+      "duration": "5",
+      "fees": "55555",
+      "courseList": "v4",
+      "gender": "Male",
+      "startDate": "2025-09-09"
+    }
+  ]
+}

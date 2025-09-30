@@ -1,0 +1,33 @@
+<div class="container w-50 m-auto mt-5">
+    <h4>New Booking</h4>
+    <form #createBookingForm="ngForm" class="border  p-4" (ngSubmit)="createBooking(createBookingForm)">
+
+        <div class="mb-3">
+            <label for="cust_id" class="form-label">Id</label>
+            <input type="text" class="form-control" id="cust_id" name="id" [(ngModel)]="bookingObj.id" required>
+        </div>
+        <div class="mb-3">
+            <label for="cust_name" class="form-label">Customer Name</label>
+            <input type="text" class="form-control" id="cust_name" name="customerName"
+                [(ngModel)]="bookingObj.customerName" required>
+        </div>
+        <div class="mb-3">
+            <label for="cust_source" class="form-label">Source</label>
+            <input type="text" class="form-control" id="cust_source" name="source" [(ngModel)]="bookingObj.source"
+                required>
+        </div>
+        <div class="mb-3">
+            <label for="cust_destination" class="form-label">Destination</label>
+            <input type="text" class="form-control" id="cust_destination" name="destination"
+                [(ngModel)]="bookingObj.destination" required>
+        </div>
+        <div class="mb-3">
+            <label for="cust_travelDate" class="form-label">Travel Date</label>
+            <input type="date" class="form-control" id="cust_travelDate" name="travelDate"
+                [(ngModel)]="bookingObj.travelDate" required>
+        </div>
+
+        <button type="submit" class="btn btn-primary">Submit</button>
+        <button type="button" class="btn btn-primary m-2" [routerLink]="['/booking']">Back</button>
+    </form>
+</div>

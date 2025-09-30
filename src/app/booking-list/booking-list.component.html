@@ -1,0 +1,36 @@
+<div class="container  w-50 m-auto mt-5 ">
+    <button class="btn btn-primary" [routerLink]="['/createBooking']">New Booking</button>
+
+    <table class="table border mt-2">
+        <thead>
+            <tr>
+                <th scope="col">Sr no.</th>
+                <th scope="col">Customer Name</th>
+                <th scope="col">Source</th>
+                <th scope="col">Destination</th>
+                <th scope="col">Travel Date</th>
+                <th scope="col">Action</th>
+            </tr>
+        </thead>
+        <tbody>
+            <ng-container *ngIf="bookingList.length > 0">
+                <tr *ngFor="let booking of bookingList, let i=index">
+                    <td>{{i+1}}</td>
+                    <td>{{booking.customerName}}</td>
+                    <td>{{booking.source}}</td>
+                    <td>{{booking.destination}}</td>
+                    <td>{{booking.travelDate | date:'dd-MM-yyyy'}}</td>
+                    <td><button type="button" class="btn btn-primary btn-sm mx-2"
+                            [routerLink]="['/editBooking',booking.id]">Edit</button>
+                        <button type="button" class="btn btn-primary  btn-sm"
+                            (click)="deleteBookingData(booking.id,i)">Delete</button>
+                    </td>
+                </tr>
+            </ng-container>
+
+            <tr *ngIf="bookingList.length == 0">
+                <td colspan="5" class="text-center text-danger">No Record Found</td>
+            </tr>
+        </tbody>
+    </table>
+</div>

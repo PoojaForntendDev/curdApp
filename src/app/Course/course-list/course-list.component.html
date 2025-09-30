@@ -1,0 +1,40 @@
+<div class="container m-auto  mt-5">
+    <h4>Course Details</h4>
+    <button class="btn btn-primary border my-2" [routerLink]="['/createCourse']">New Course</button>
+    <table class="table table-bordered table-striped table-hover">
+        <thead>
+            <tr>
+                <th scope="col">Sr No.</th>
+                <th scope="col">Course Name</th>
+                <th scope="col">Course List</th>
+                <th scope="col">Duration</th>
+                <th scope="col">Fees</th>
+                <th scope="col">Gender</th>
+                <th scope="col">Start Date</th>
+                <th scope="col">Action</th>
+            </tr>
+        </thead>
+        <tbody>
+            <ng-container *ngIf="courseList.length >0">
+                <tr *ngFor="let course of courseList,let i=index">
+                    <td>{{i+1}}</td>
+                    <td>{{course.courseName}}</td>
+                    <td>{{course.courseList}}</td>
+                    <td>{{course.duration}}</td>
+                    <td>{{course.fees}}</td>
+                    <td>{{course.gender}}</td>
+                    <td>{{course.startDate |date:'dd-MM-yyyy'}}</td>
+                    <td><button class="btn btn-primary btn-sm mx-2"
+                            [routerLink]="['/editCourse',course.id]">Edit</button>
+                        <button class="btn btn-primary btn-sm" (click)="deleteCourse(course.id,i)">Delete</button>
+                    </td>
+                </tr>
+            </ng-container>
+            <tr *ngIf="courseList.length==0">
+                <td colspan="6" class="text-center text-danger">No Course Found</td>
+            </tr>
+        </tbody>
+    </table>
+
+
+</div>
