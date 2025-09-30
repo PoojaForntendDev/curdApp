@@ -12,4 +12,9 @@ import { BookingListComponent } from './booking-list/booking-list.component';
 })
 export class AppComponent {
   title = 'curdDemo';
+  constructor() { }
+
+  ngOnInit() {
+    console.log("Inside App Componant")
+  }
 }
